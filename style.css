@@ -1,58 +1,27 @@
- * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Segoe UI", sans-serif;
+ .recent-searches {
+  margin-top: 15px;
 }
 
-body {
-  height: 100vh;
-  background: linear-gradient(135deg, #667eea, #764ba2);
+#recentList {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 10px;
 }
 
-.app {
-  text-align: center;
+.recent-btn {
+  padding: 6px 10px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  background: rgba(255,255,255,0.2);
   color: white;
 }
 
-.search-box {
-  margin: 15px 0;
-}
-
-input {
-  padding: 8px;
-  border-radius: 6px;
-  border: none;
-}
-
-button {
-  padding: 8px 12px;
-  margin-left: 5px;
+#clearHistory {
+  margin-top: 10px;
+  padding: 6px 10px;
   border-radius: 6px;
   border: none;
   cursor: pointer;
-}
-
-.weather-card {
-  margin-top: 20px;
-  padding: 25px;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.15);
-}
-
-#temperature {
-  font-size: 2.5rem;
-  font-weight: bold;
-}
-
-.hidden {
-  display: none;
-}
-
-button:hover {
-  background-color: #ffffff;
-  color: #764ba2;
 }
