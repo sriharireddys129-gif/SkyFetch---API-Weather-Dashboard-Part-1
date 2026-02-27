@@ -1,42 +1,25 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SkyFetch - Weather Dashboard</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>SkyFetch Weather Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div class="container">
-        <h1> SkyFetch</h1>
-        <p class="tagline">Your Personal Weather Dashboard</p>
-        
-        <section>
-            <!-- Add this BEFORE the #weather-display div -->
 
-<div class="search-section">
-    <!-- TODO: Create an input field -->
-    <!-- - type: text -->
-    <!-- - id: city-input -->
-    <!-- - placeholder: "Enter city name..." -->
-    
-    <!-- TODO: Create a search button -->
-    <!-- - id: search-btn -->
-    <!-- - text: "Search" or "Search" -->
-</div>
+  <div class="app">
+    <h1>🌤️ SkyFetch</h1>
 
-            
-        </section><div id="weather-display">
-            <p class="loading">Loading weather data...</p>
-        </div>
+    <div class="weather-card">
+      <h2 id="city">City</h2>
+      <img id="icon" alt="Weather Icon" />
+      <p id="temperature">-- °C</p>
+      <p id="description">Weather description</p>
     </div>
+  </div>
 
-    <!-- Axios CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    
-    <!-- Your JavaScript -->
-    <script src="app.js"></script>
+  <!-- Axios CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="app.js"></script>
 </body>
-
 </html>
-
