@@ -1,5 +1,6 @@
  const API_KEY = "7ecd220fd1113254db674bc0cf6c5984";
 
+// DOM elements
 const cityEl = document.getElementById("city");
 const tempEl = document.getElementById("temperature");
 const descEl = document.getElementById("description");
@@ -9,6 +10,7 @@ const searchInput = document.getElementById("searchInput");
 const searchBtn = document.getElementById("searchBtn");
 const loadingEl = document.getElementById("loading");
 
+// Fetch weather using async/await
 async function fetchWeather(city) {
   try {
     loadingEl.classList.remove("hidden");
@@ -17,6 +19,9 @@ async function fetchWeather(city) {
     const response = await axios.get(url);
 
     displayWeather(response.data);
+
+    // Save last searched city
+    localStorage.setItem("lastCity", city);
   } catch (error) {
     alert("City not found. Please try again.");
   } finally {
@@ -24,6 +29,7 @@ async function fetchWeather(city) {
   }
 }
 
+// Display weather data
 function displayWeather(data) {
   cityEl.textContent = data.name;
   tempEl.textContent = `${Math.round(data.main.temp)} °C`;
@@ -31,7 +37,7 @@ function displayWeather(data) {
   iconEl.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
 }
 
-// Search button
+// Search button click
 searchBtn.addEventListener("click", () => {
   const city = searchInput.value.trim();
   if (city) {
@@ -39,5 +45,8 @@ searchBtn.addEventListener("click", () => {
   }
 });
 
-// Initial load
-fetchWeather("London");
+// Load last searched city on page load
+window.addEventListener("load", () => {
+  const savedCity = localStorage.getItem("lastCity") || "London";
+  fetchWeather(savedCity);
+});
